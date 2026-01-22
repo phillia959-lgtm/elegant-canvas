@@ -22,12 +22,12 @@ const ActivityCard = ({ title, emptyIcon, emptyTitle, emptyDescription, linkText
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center py-8 text-center">
-        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
-          <Icon className="h-5 w-5 text-muted-foreground" />
+        <div className="icon-container icon-container-default mb-4 h-14 w-14 rounded-full">
+          <Icon className="h-6 w-6" strokeWidth={1.5} />
         </div>
         <h4 className="text-sm font-medium text-foreground">{emptyTitle}</h4>
-        <p className="mt-1 max-w-[200px] text-sm text-muted-foreground">{emptyDescription}</p>
-        <button className="mt-4 flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-accent-hover">
+        <p className="mt-1.5 max-w-[220px] text-[13px] leading-relaxed text-muted-foreground">{emptyDescription}</p>
+        <button className="mt-5 flex items-center gap-1.5 text-sm font-medium text-primary transition-all duration-200 hover:gap-2">
           {linkText}
           <ArrowUpRight className="h-3.5 w-3.5" />
         </button>

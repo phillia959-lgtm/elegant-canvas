@@ -9,22 +9,28 @@ interface StatCardProps {
 }
 
 const StatCard = ({ title, value, subtitle, icon: Icon, variant = "default" }: StatCardProps) => {
+  const isAccent = variant === "accent";
+  
   return (
-    <div className="card-kpi">
+    <div className={isAccent ? "card-kpi-accent" : "card-kpi"}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          <p className={`text-[11px] font-semibold uppercase tracking-wide ${
+            isAccent ? "text-primary/70" : "text-muted-foreground"
+          }`}>
             {title}
           </p>
-          <p className="mt-2 text-3xl font-semibold text-foreground">{value}</p>
-          <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
+          <p className={`mt-2 text-3xl font-semibold tracking-tight ${
+            isAccent ? "text-foreground" : "text-foreground"
+          }`}>
+            {value}
+          </p>
+          <p className="mt-1.5 text-[13px] text-muted-foreground">{subtitle}</p>
         </div>
-        <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-          variant === "accent" 
-            ? "bg-primary/10 text-primary" 
-            : "bg-secondary text-muted-foreground"
+        <div className={`icon-container h-11 w-11 ${
+          isAccent ? "icon-container-accent" : "icon-container-default"
         }`}>
-          <Icon className="h-5 w-5" />
+          <Icon className="h-5 w-5" strokeWidth={1.75} />
         </div>
       </div>
     </div>

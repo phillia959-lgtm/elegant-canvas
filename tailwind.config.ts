@@ -14,14 +14,6 @@ export default {
     },
     extend: {
       colors: {
-        /* Core palette */
-        "dark-base": "hsl(var(--dark-base))",
-        "dark-surface": "hsl(var(--dark-surface))",
-        "mid-surface": "hsl(var(--mid-surface))",
-        "light-surface": "hsl(var(--light-surface))",
-        "border-muted": "hsl(var(--border-muted))",
-        "background-light": "hsl(var(--background-light))",
-        
         /* Semantic tokens */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +39,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          hover: "hsl(var(--accent-hover))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

@@ -6,31 +6,34 @@ const data = [
   { name: "Résolus", value: 50 },
 ];
 
-const COLORS = ["hsl(var(--border-muted))", "hsl(var(--mid-surface))"];
+const COLORS = ["hsl(var(--secondary))", "hsl(var(--primary))"];
 
 const DonutChart = () => {
   return (
-    <div className="card-stat flex flex-col">
+    <div className="card-stat flex h-full flex-col">
       <div className="flex items-start gap-2">
-        <AlertTriangle className="h-5 w-5 text-light-surface" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
+          <AlertTriangle className="h-4 w-4 text-primary" />
+        </div>
         <div>
-          <h3 className="text-lg font-semibold text-foreground">Incidents par Statut</h3>
+          <h3 className="text-base font-semibold text-foreground">Incidents par Statut</h3>
           <p className="text-sm text-muted-foreground">Répartition actuelle</p>
         </div>
       </div>
 
       <div className="mt-4 flex flex-1 items-center justify-center">
-        <div className="relative h-48 w-48">
+        <div className="relative h-40 w-40">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={80}
-                paddingAngle={2}
+                innerRadius={50}
+                outerRadius={70}
+                paddingAngle={3}
                 dataKey="value"
+                strokeWidth={0}
               >
                 {data.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -39,17 +42,16 @@ const DonutChart = () => {
             </PieChart>
           </ResponsiveContainer>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-foreground">50%</span>
-            <span className="text-sm text-muted-foreground">Résolus</span>
-            <span className="text-xs text-muted-foreground">50% en cours</span>
+            <span className="text-2xl font-semibold text-foreground">50%</span>
+            <span className="text-xs text-muted-foreground">Résolus</span>
           </div>
         </div>
       </div>
 
-      <div className="mt-4 space-y-3 border-t border-border pt-4">
+      <div className="mt-4 space-y-2.5 border-t border-border pt-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-border-muted" />
+            <span className="h-2.5 w-2.5 rounded-full bg-secondary" />
             <span className="text-sm text-foreground">En cours</span>
             <span className="text-xs text-muted-foreground">50 incidents</span>
           </div>
@@ -57,13 +59,13 @@ const DonutChart = () => {
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-mid-surface" />
+            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
             <span className="text-sm text-foreground">Résolus</span>
             <span className="text-xs text-muted-foreground">50 incidents</span>
           </div>
           <span className="text-sm font-medium text-foreground">50%</span>
         </div>
-        <div className="flex items-center justify-between border-t border-border pt-3">
+        <div className="flex items-center justify-between border-t border-border pt-2.5">
           <span className="text-sm text-muted-foreground">Total incidents</span>
           <span className="text-sm font-semibold text-foreground">100</span>
         </div>

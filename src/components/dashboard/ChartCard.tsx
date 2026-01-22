@@ -16,7 +16,7 @@ const ChartCard = () => {
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-base font-semibold text-foreground">Total Congés</h3>
-          <p className="text-sm text-muted-foreground">Évolution mensuelle</p>
+          <p className="text-[13px] text-muted-foreground">Évolution mensuelle</p>
         </div>
         <button className="btn-accent">
           Voir tout
@@ -32,13 +32,14 @@ const ChartCard = () => {
               axisLine={false} 
               tickLine={false}
               tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }}
+              dy={8}
             />
-            <Bar dataKey="value" radius={[4, 4, 0, 0]}>
+            <Bar dataKey="value" radius={[6, 6, 0, 0]}>
               {data.map((_, index) => (
                 <Cell 
                   key={`cell-${index}`} 
                   fill="hsl(var(--primary))"
-                  opacity={0.85}
+                  opacity={0.9}
                 />
               ))}
             </Bar>
@@ -46,10 +47,10 @@ const ChartCard = () => {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-4 flex items-center gap-2 border-t border-border pt-4 text-sm text-muted-foreground">
-        <span className="h-2 w-2 rounded-full bg-primary" />
+      <div className="mt-4 flex items-center gap-2.5 border-t border-border pt-4 text-[13px] text-muted-foreground">
+        <span className="h-2.5 w-2.5 rounded-full bg-primary" />
         Jours de congés
-        <span className="ml-auto text-foreground font-medium">Max: 5 200 jours</span>
+        <span className="ml-auto font-medium text-foreground">Max: 5 200 jours</span>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between border-b border-border bg-card px-6 py-4">
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">Dashboard</h1>
+        <h1 className="text-xl font-semibold text-foreground">Dashboard</h1>
         <p className="text-sm text-muted-foreground">Vue d'ensemble</p>
       </div>
 
@@ -15,21 +15,21 @@ const Header = () => {
           <input
             type="text"
             placeholder="Rechercher..."
-            className="h-10 w-64 rounded-lg border border-border bg-background pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-light-surface focus:outline-none focus:ring-1 focus:ring-light-surface"
+            className="h-9 w-56 rounded-lg border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/30"
           />
         </div>
 
         {/* Notifications */}
-        <button className="relative flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:bg-background hover:text-foreground">
-          <Bell className="h-5 w-5" />
-          <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-mid-surface text-xs font-medium text-primary-foreground">
+        <button className="relative flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary">
+          <Bell className="h-4.5 w-4.5" />
+          <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium text-primary-foreground">
             3
           </span>
         </button>
 
         {/* User */}
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-mid-surface text-sm font-semibold text-primary-foreground">
+        <div className="flex items-center gap-3 pl-2">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-sm font-medium text-foreground">
             TT
           </div>
           <div className="text-right">

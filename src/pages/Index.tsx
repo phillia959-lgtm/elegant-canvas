@@ -28,21 +28,19 @@ const Index = () => {
               value={9}
               subtitle="Dans l'entreprise"
               icon={Users}
-              variant="default"
+              variant="accent"
             />
             <StatCard
               title="Congés en attente"
               value={1}
               subtitle="À traiter"
               icon={Clock}
-              variant="outlined"
             />
             <StatCard
               title="Incidents ouverts"
               value={0}
               subtitle="Nécessitent attention"
               icon={AlertTriangle}
-              variant="outlined"
             />
             <StatCard
               title="Congés approuvés"
